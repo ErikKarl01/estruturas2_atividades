@@ -1,0 +1,38 @@
+PS C:\Users\kekin\OneDrive\Área de Trabalho\estruturas2> gcc -g -o exe_arvore exe_arvore.c
+>> 
+PS C:\Users\kekin\OneDrive\Área de Trabalho\estruturas2> gdb
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+(gdb) file exe_arvore
+Reading symbols from C:\Users\kekin\OneDrive\Área de Trabalho\estruturas2\exe_arvore.exe...done.
+(gdb) b main
+Breakpoint 1 at 0x40146e: file exe_arvore.c, line 16.
+(gdb) r
+Starting program: C:\Users\kekin\OneDrive\Área de Trabalho\estruturas2/exe_arvore.exe
+[New Thread 2952.0xff8]
+[New Thread 2952.0x2cdc]
+
+Breakpoint 1, main () at exe_arvore.c:16
+16          Aluno* raiz = (Aluno*)malloc(sizeof(Aluno));
+(gdb) n 
+17          raiz->mat  = 5;
+(gdb) n
+18          strcpy(raiz->nome, "Kekin");
+(gdb) n
+19          raiz->turma = 1;
+(gdb) print raiz->nome
+$1 = "Kekin\000­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º\rð­º"
+(gdb) n
+20          raiz->nota = rand()%10;
+(gdb) n
+21          raiz->aluno_ant = NULL;
+(gdb) print raiz->nota
+$2 = 1
+(gdb)
